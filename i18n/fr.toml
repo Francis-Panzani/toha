@@ -66,10 +66,10 @@ other = "sur"
 other = "Publications"
 
 [taken_courses]
-other = "Cours suivis"
+other = "Formations suivies"
 
 [course_name]
-other = "Intitulé du cours"
+other = "Cours suivis"
 
 [total_credit]
 other = "Crédit total"
@@ -78,7 +78,7 @@ other = "Crédit total"
 other = "Crédit obtenu"
 
 [extracurricular_activities]
-other = "Activités extra-scolaires"
+other = "Informations complémentaires"
 
 [show_more]
 other = "En savoir plus"
@@ -87,7 +87,7 @@ other = "En savoir plus"
 other = "Montrer moins"
 
 [responsibilities]
-other = "Responsabilitiés :"
+other = "Responsabilités :"
 
 [present]
 other = "Aujourd'hui"
@@ -102,13 +102,13 @@ other = "commentaires fournis par"
 other = "Lire"
 
 # [project_star]
-# other = "Star"
+# other = "Github"
 
 [project_details]
 other = "Détails"
 
 [err_404]
-other = "La page que vous recherchez n'est pas disponible."
+other = "Ce n'est soit pas le bon endroit soit pas la bonne page demandée :)"
 
 [more]
 other = "Suite"

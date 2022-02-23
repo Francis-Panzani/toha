@@ -1,0 +1,23 @@
+.formation-table-item {
+  transition: all 1s;
+}
+
+.formation-table-item>* {
+  transition: all 1.5s;
+  overflow: hidden;
+}
+
+.formation-table-enter,
+.formation-table-leave-to {
+  line-height: 0;
+}
+.formation-table-enter > *,
+.formation-table-leave-to > * {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.formation-table-enter-to,
+.formation-table-leave {
+  line-height: 1.5;
+}

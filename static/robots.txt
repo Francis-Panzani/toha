@@ -1,0 +1,6 @@
+# www.robotstxt.org/
+Sitemap: https://francis-panzani.github.io/sitemap.xml
+# Allow crawling of all content
+User-agent: *
+Disallow:/files/
+Disallow:/fr/files/
