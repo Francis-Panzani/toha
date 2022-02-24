@@ -1,0 +1,66 @@
+<!-- 
+
+
+C:\utils\xampp\htdocs\_test\FORMENVOIE MAIL
+faire si nom est testsms alors envoie smooth-scroll
+
+
+-->
+
+
+<div id="wrapper" class="contact1 wrapper close-wrapper" >
+  <div class="contact-image">
+    <img src="/images/contact_form/avatar_cercle_fp.png" alt=""/>
+  </div>
+  <div class="container-contact1">
+
+    <div class="contact1-pic js-tilt" data-tilt>
+      <img src="/images/contact_form/img-01.png" alt="IMG">
+    </div>
+    <form class="contact1-form validate-form" method="POST" action=
+    {{ if site.Params.contact_form.url }}
+      {{site.Params.contact_form.url}}
+    {{ else  }}
+     "404.html"
+    {{ end }}
+    >
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+      <span class="contact1-form-title ">
+        {{ i18n "contact_form"}} <button id="close" class="btn btn-dark">X</button>
+      </span>
+     
+      <div class="wrap-input1 validate-input" data-validate = "{{ i18n "name_req"}}">
+        <input class="input1" type="text" name="name" placeholder={{ i18n "name"}}>
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="wrap-input1 validate-input" data-validate = {{ i18n "email_req"}} >
+        <input class="input1" type="text" name="email" placeholder={{ i18n "email"}}>
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="wrap-input1 validate-input" data-validate = {{ i18n "subject_req"}}>
+        <input class="input1" type="text" name="subject" placeholder={{ i18n "subject"}}>
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="wrap-input1 validate-input" data-validate = {{ i18n "message_req"}}>
+        <textarea class="input1" name="message" placeholder={{ i18n "message"}}></textarea>
+        <span class="shadow-input1"></span>
+      </div>
+
+      <div class="container-contact1-form-btn">
+        <button class="contact1-form-btn">
+          <span>
+            {{ i18n "send_mail"}}
+            <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+          </span>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+
+

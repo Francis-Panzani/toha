@@ -124,3 +124,30 @@ other = "Liability Notice"
 
 [search]
 other = "Search"
+
+[contact_form]
+other = "Contact Form"
+
+[name]
+other = "Name"
+
+[name_req]
+other = "Name required"
+
+[subject]
+other = "Subject"
+
+[subject_req]
+other = "Subject required"
+
+[message]
+other = "Message"
+
+[message_req]
+other = "Message required"
+
+[email_req]
+other = "Valid Email is required ex: toto@example.com"
+
+[send_mail]
+other = "Send Email"

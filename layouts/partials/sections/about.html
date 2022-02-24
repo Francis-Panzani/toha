@@ -8,6 +8,12 @@
   {{ $author = (index site.Data site.Language.Lang).author }}
 {{ end }}
 
+<!-- ADD Contact Form IF ENABLED -->
+
+
+
+
+
 <div class="container anchor p-lg-5 about-section" id="{{ $sectionID }}">
   <div class="row pt-sm-2 pt-md-4 align-self-center">
     <!-- summary -->
@@ -26,7 +32,7 @@
         {{ .summary | markdownify }}
       </p>
       <div class="text-container ml-auto ">
-        <ul class="social-link d-flex">
+        <ul class="social-link d-flex justify-content-center">
           {{ range .socialLinks }}
           <li>
             {{ if eq .name "Email" }}
@@ -36,15 +42,18 @@
            {{ else }}
             <a href="{{ .url }}" title="{{ .name }}" target="_blank" rel="noopener"><i class="{{ .icon }}"></i></a>
             {{ end }}
-          </li>           
+          </li>        
           {{ end }}
-          {{ if .resume }}
-          <span>
-          <a href="{{ .resume | relURL }}" title="{{ i18n "resume"}}" target="#" ><button class="btn btn-dark">{{ i18n "resume"}}</button></a>
-        </span>
-        {{ end }}
         </ul>
-
+ <span class="d-flex justify-content-center">
+        {{ if .resume }}
+        <a href="{{ .resume | relURL }}" title="{{ i18n "resume"}}" target="#" ><button class="btn btn-dark"> {{ i18n "resume"}}</button></a>
+     {{ end }}
+        {{ if site.Params.contact_form }}
+        &nbsp;&nbsp;<button id="open" class="btn btn-dark  g-recaptcha" data-sitekey="{{ site.Params.contact_form.data_sitekey }}" data-callback='onSubmit' data-action='submit' id="inputsubmit">{{ i18n "contact_form"}}</button>
+     
+      {{ end }}
+    </span>
       </div>
       <!-- retirer pour mettre le cv au même endroit que les icones
          {{ if .resume }}

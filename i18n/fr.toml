@@ -124,3 +124,30 @@ other = "Avis de responsabilité"
 
 [search]
 other = "Chercher"
+
+[contact_form]
+other = "Formulaire de contact"
+
+[name]
+other = "Nom"
+
+[name_req]
+other = "Nom requis"
+
+[subject]
+other = "Objet"
+
+[subject_req]
+other = "L'objet est requis"
+
+[message]
+other = "Message"
+
+[message_req]
+other = "Un petit mot est requis"
+
+[email_req]
+other = "Un Email valide est requis ex: toto@example.fr"
+
+[send_mail]
+other = "Envoyer un Email"
