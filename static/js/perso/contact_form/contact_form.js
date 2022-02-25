@@ -8,7 +8,7 @@ openbas!=null ? openbas.addEventListener("click", () => {
   y = window.scrollY;
     modal.classList.remove("close-wrapper");
     if (window.scrollY) {  
-      window.scroll(0, 0);  // reset the scroll position to the top left of the document.
+      self.location.href='#wrapper'//on va jusqu'au formulaire
     }
     modal.classList.add("show-wrapper"); 
 }) : "";
@@ -17,7 +17,8 @@ open!=null ? open.addEventListener("click", () => {
   y = window.scrollY;
   modal.classList.remove("close-wrapper");
   if (window.scrollY) {  
-    window.scroll(0, 0);  // reset the scroll position to the top left of the document.
+    console.log ("screnn haut"+ screen.height);
+    self.location.href='#wrapper'//on va jusqu'au formulaire
   }
   modal.classList.add("show-wrapper"); 
 }) : "";

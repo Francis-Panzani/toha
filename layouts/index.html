@@ -47,10 +47,7 @@
     {{ end }}
   </head>
   <body data-spy="scroll" data-target="#top-navbar" data-offset="100">
-    <!-- ADD Contact Form IF ENABLED -->
-    {{ if site.Params.contact_form.enable }}
-      {{- partial "perso/contact_form.html" . -}}
-    {{ end }}
+
     <!--- NAVBAR ------------------------->
     {{- partial "navigators/navbar.html" . -}}
 
@@ -85,6 +82,11 @@
     {{ end }}
 
     <!--- ADD FOOTER ----------------------->
+    <!-- ADD Contact Form IF ENABLED -->
+    {{ if site.Params.contact_form.enable }}
+    {{- partial "perso/contact_form.html" . -}}
+  {{ end }}
+
     {{ $footerTemplate:= site.Params.footer.template | default "footer.html" }}
     {{- partial $footerTemplate . -}}
 

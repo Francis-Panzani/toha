@@ -9,7 +9,7 @@
 
 {{/*  rajout pour gestion du formulaire de contact */}}
 {{ $contactformEnabled  := site.Params.footer.contact_form.enable  | default false }}
-
+{{ $contactformfooterEnabled  := site.Params.contact_form.footer  | default false }}
 
 {{/*  Keep backward compatibility for the newsletter function */}}
 {{ if site.Params.newsletter }}
@@ -125,8 +125,10 @@
             {{ end }}
             <!-- ------------ Formulaire de contact  --------------->
             {{ if $contactformEnabled }}
-              {{ if site.Params.contact_form }}
-                   <button id="openbas" class="btn btn-dark  g-recaptcha" data-sitekey="{{ site.Params.contact_form.data_sitekey }}" data-callback='onSubmit' data-action='submit' id="inputsubmit">{{ i18n "contact_form"}}</button>
+              {{ if $contactformfooterEnabled  }}
+                {{ if site.Params.contact_form }}
+                    <button id="openbas" class="btn btn-dark  g-recaptcha" data-sitekey="{{ site.Params.contact_form.data_sitekey }}" data-callback='onSubmit' data-action='submit' id="inputsubmit">{{ i18n "contact_form"}}</button>
+                {{ end }}
               {{ end }}
           {{ end }}
           </ul>
