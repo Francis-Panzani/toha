@@ -100,7 +100,7 @@ try {
    timeout:3000, //3 second timeout,
    success: function(data, textStatus, jqXHR)
    {
-        console.log("data.message");
+      //  console.log("data.message" +data.message);
        $('#ajaxLoading').text("\xa0 Ok 👍");
        $('#ajaxLoading').removeClass("error");
        $('#ajaxLoading').addClass("ok");
