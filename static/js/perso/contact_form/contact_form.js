@@ -17,7 +17,7 @@ open!=null ? open.addEventListener("click", () => {
   y = window.scrollY;
   modal.classList.remove("close-wrapper");
   if (window.scrollY) {  
-    console.log ("screnn haut"+ screen.height);
+   //console.log ("screnn haut"+ screen.height);
     self.location.href='#wrapper'//on va jusqu'au formulaire
   }
   modal.classList.add("show-wrapper"); 
@@ -29,6 +29,11 @@ close!=null ? close.addEventListener("click", () => {
   modal.classList.add("close-wrapper"); 
    // window.location.reload(true);
   window.scroll(1, 1+y);  // reset the scroll position before scrolling top
+  $('#ajaxLoading').text(spanAjaxLoadingmsg); // Not Found  
+  $('#ajaxLoading').removeClass("ok");
+  $('#ajaxLoading').removeClass("error");
+  $('#ajaxLoading').removeClass("show_loading");
+  $('#ajaxLoading').addClass("close_loading");
 }): "";
 
 
@@ -42,9 +47,15 @@ close!=null ? close.addEventListener("click", () => {
   let subject = $('.validate-input input[name="subject"]');
   let message = $('.validate-input textarea[name="message"]');
 
-
   $('.validate-form').on('submit',function(){
+    event.preventDefault();
     let check = true;
+
+    $('#ajaxLoading').removeClass("ok");
+    $('#ajaxLoading').removeClass("error");
+    $('#ajaxLoading').text(spanAjaxLoadingmsg);
+    $('#ajaxLoading').removeClass("show_loading");
+    $('#ajaxLoading').addClass("close_loading");
 
       if($(name).val().trim() == ''){
           showValidate(name);
@@ -67,15 +78,70 @@ close!=null ? close.addEventListener("click", () => {
           check=false;
       }
 
-      return check;
+  if (check!=true) return check;
+  $('#ajaxLoading').removeClass("close_loading");
+  $('#ajaxLoading').addClass("show_loading");
+
+ var formData = {
+    'name'     : $('input[name="name"]').val(),
+    'email'    : $('input[name="email"]').val(),
+    'subject'  : $('input[name="subject"]').val(),
+    'message'  : $('textarea[name="message"]').val()
+};
+//$('#ajaxLoading').text("-"+formData.nom+"-"); // Not Found
+
+try {
+  $.ajax({
+      
+   // url : "https://copieauto.000webhostapp.com/formulaire/mail.php",
+   url : url_form_action,
+   type: "POST",
+   data : formData,
+   timeout:3000, //3 second timeout,
+   success: function(data, textStatus, jqXHR)
+   {
+        console.log("data.message");
+       $('#ajaxLoading').text("\xa0 Ok 👍");
+       $('#ajaxLoading').removeClass("error");
+       $('#ajaxLoading').addClass("ok");
+       if (data.code) //If mail was sent successfully, reset the form.
+       $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+
+   },
+   error: function (jqXHR, textStatus, errorThrown)
+   {
+       $('#ajaxLoading').text("\xa0 Error 😭"); // Not Found
+    //   $('#ajaxLoading').text(jqXHR);
+    $('#ajaxLoading').removeClass("ok");
+    $('#ajaxLoading').addClass("error");
+   }
+});
+} catch (error) {
+  $('#ajaxLoading').text("\xa0 Error 😭"); 
+  $('#ajaxLoading').removeClass("ok");
+   $('#ajaxLoading').addClass("error");
+}
+
+/* 
+{{ if site.Params.contact_form.url }}
+      {{site.Params.contact_form.url}}
+    {{ else  }}
+     "404.html"
+    {{ end }} 
+*/
+
+   //   return check;
+
   });
 
-
-  $('.validate-form .input1').each(function(){
+    $('.validate-form .input1').each(function(){
       $(this).focus(function(){
          hideValidate(this);
      });
   });
+  
+
+
 
   function showValidate(input) {
     let thisAlert = $(input).parent();
@@ -85,8 +151,7 @@ close!=null ? close.addEventListener("click", () => {
 
   function hideValidate(input) {
     let thisAlert = $(input).parent();
-
-      $(thisAlert).removeClass('alert-validate');
+    $(thisAlert).removeClass('alert-validate');
   }
   
   
@@ -98,3 +163,4 @@ close!=null ? close.addEventListener("click", () => {
 $('.js-tilt').tilt({
   scale: 1.2
 })
+

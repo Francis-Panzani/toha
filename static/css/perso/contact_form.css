@@ -24,6 +24,33 @@
   src: url('/fonts/montserrat/Montserrat-Medium.ttf'); 
 }
 
+
+/*------------------ rajout icone In ---------------------------*/
+a[href="https://www.linkedin.com/in/francispanzani/"]::after {
+  color: #248AAA!important;
+  content: "\F08C";
+  font-size: 1.1em;
+  font-family: FontAwesome;
+}
+
+/* rajout gestion Ajax */
+
+.alert-validate::after {
+  content: "\f06a";
+  font-family: FontAwesome;
+  display: block;
+  position: absolute;
+  color: #c80000;
+  font-size: 15px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 13px;
+}
+
 /*------------------ Form Visible - non visible ---------------------------*/
 
 .wrapper{
@@ -36,7 +63,7 @@
 .show-wrapper {
   display: block;
   opacity: 1;
-  z-index: 2;
+  z-index: 7;
 }
 
 .close-wrapper {
@@ -318,7 +345,7 @@ textarea.input1 + .shadow-input1 {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .container-contact1 {
     padding: 90px 80px 88px 80px;
   }
@@ -415,3 +442,70 @@ textarea.input1 + .shadow-input1 {
     opacity: 1;
   }
 }
+
+.loading_ajax{
+  display: block;
+  background-color: #E6E6E6;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0 30px;
+  width: 100%;
+  font-size: 1.3em;
+  font-family: FontAwesome;
+  padding-top: 0.5em;
+  line-height: normal;
+  text-align: center;
+}
+
+div[class="wrap-input1 loading_ajax show_loading"]::before {
+  color: #248AAA!important;
+  content: "\f021";
+  font-size: 1.1em;
+  font-family: FontAwesome;
+  position: absolute;
+  transform: translateX(-200px);
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+div[class="wrap-input1 loading_ajax show_loading error"]::before {
+  content: "\f071";
+  font-family: FontAwesome;
+}
+
+.loading_ajax.error {
+  color: whitesmoke;
+  background-color: #cc1e1e;
+}
+
+.close_loading {
+  display: none;
+  }
+
+.show_loading {
+display: block;
+}
+
+
+div[class="wrap-input1 loading_ajax show_loading ok"]::before {
+  content: "\f058";
+  font-family: FontAwesome;
+}
+.loading_ajax.ok {
+  color: whitesmoke;
+  background-color:#57B846;
+}
+
+
+
+
+
+ 

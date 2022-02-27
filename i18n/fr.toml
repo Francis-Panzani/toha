@@ -151,3 +151,6 @@ other = "Un Email valide est requis ex: toto@example.fr"
 
 [send_mail]
 other = "Envoyer un Email"
+
+[loading_ajax]
+other = "Envoi..."
