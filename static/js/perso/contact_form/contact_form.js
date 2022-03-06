@@ -97,7 +97,7 @@ try {
    url : url_form_action,
    type: "POST",
    data : formData,
-   timeout:3000, //3 second timeout,
+   timeout:7000, //7 second timeout,
    success: function(data, textStatus, jqXHR)
    {
       //  console.log("data.message" +data.message);
