@@ -1,7 +1,10 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-
+.grecaptcha-badge {
+  left: 0 !important;
+  bottom: 0 !important;
+}
 @import url(/fonts/font-awesome-4.7.0/css/font-awesome.min.css);
 
 @font-face {
