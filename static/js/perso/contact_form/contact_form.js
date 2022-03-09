@@ -34,6 +34,7 @@ close!=null ? close.addEventListener("click", () => {
   $('#ajaxLoading').removeClass("error");
   $('#ajaxLoading').removeClass("show_loading");
   $('#ajaxLoading').addClass("close_loading");
+
 }): "";
 
 
@@ -104,9 +105,7 @@ try {
        $('#ajaxLoading').text("\xa0 Ok 👍");
        $('#ajaxLoading').removeClass("error");
        $('#ajaxLoading').addClass("ok");
-       if (data.code==1) {//If mail was sent successfully, reset the form.
        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-console.log("ok");}
    },
    error: function (jqXHR, textStatus, errorThrown)
    {
@@ -117,7 +116,7 @@ console.log("ok");}
    }
 });
 } catch (error) {
-  $('#ajaxLoading').text("\xa0 Error 😭"); 
+  $('#ajaxLoading').text("\xa0 - Error - 😭"); 
   $('#ajaxLoading').removeClass("ok");
    $('#ajaxLoading').addClass("error");
 }
