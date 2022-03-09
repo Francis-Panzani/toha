@@ -104,9 +104,9 @@ try {
        $('#ajaxLoading').text("\xa0 Ok 👍");
        $('#ajaxLoading').removeClass("error");
        $('#ajaxLoading').addClass("ok");
-       if (data.code) //If mail was sent successfully, reset the form.
+       if (data.code==1) {//If mail was sent successfully, reset the form.
        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
-
+console.log("ok");}
    },
    error: function (jqXHR, textStatus, errorThrown)
    {
