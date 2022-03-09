@@ -1,10 +1,7 @@
 
 /*//////////////////////////////////////////////////////////////////
 [ FONT ]*/
-.grecaptcha-badge {
-  left: 0 !important;
-  bottom: 0 !important;
-}
+
 @import url(/fonts/font-awesome-4.7.0/css/font-awesome.min.css);
 
 @font-face {
@@ -27,6 +24,11 @@
   src: url('/fonts/montserrat/Montserrat-Medium.ttf'); 
 }
 
+/*on deplace le badge de google recaptcha sur la droite */
+.grecaptcha-badge {
+  left: 0 !important;
+  bottom: 0 !important;
+}
 
 /*------------------ rajout icone In ---------------------------*/
 a[href="https://www.linkedin.com/in/francispanzani/"]::after {
