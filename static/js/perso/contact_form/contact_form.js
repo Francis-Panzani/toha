@@ -43,7 +43,7 @@ close!=null ? close.addEventListener("click", () => {
 
   
   /*======================= Gestion de la validation des inputs ===========================================*/
-  let name = $('.validate-input input[name="name"]');
+  let name = $('.validate-input input[name="nom"]');
   let email = $('.validate-input input[name="email"]');
   let subject = $('.validate-input input[name="subject"]');
   let message = $('.validate-input textarea[name="message"]');
@@ -84,13 +84,16 @@ close!=null ? close.addEventListener("click", () => {
   $('#ajaxLoading').addClass("show_loading");
 
  var formData = {
-    'name'     : $('input[name="name"]').val(),
-    'email'    : $('input[name="email"]').val(),
-    'subject'  : $('input[name="subject"]').val(),
-    'message'  : $('textarea[name="message"]').val()
+    'nom'     : $('input[name=nom]').val(),
+    'email'    : $('input[name=email]').val(),
+    'subject'  : $('input[name=subject]').val(),
+    'message'  : $('textarea[name=message]').val()
 };
-//$('#ajaxLoading').text("-"+formData.nom+"-"); // Not Found
 
+//console.log("Envoi de votre message, "+formData.nom+", veuillez patienter "+formData.email);
+
+//$('#ajaxLoading').text("-"+formData.nom+"-"); // Not Found
+console.log("formData "+formData);
 try {
   $.ajax({
       

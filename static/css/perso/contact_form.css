@@ -28,6 +28,7 @@
 .grecaptcha-badge {
   left: 0 !important;
   bottom: 0 !important;
+  z-index: 0;
 }
 
 /*------------------ rajout icone In ---------------------------*/
