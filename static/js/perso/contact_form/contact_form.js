@@ -93,41 +93,40 @@ close!=null ? close.addEventListener("click", () => {
 //console.log("Envoi de votre message, "+formData.nom+", veuillez patienter "+formData.email);
 
 //$('#ajaxLoading').text("-"+formData.nom+"-"); // Not Found
-console.log("formData "+formData);
+//console.log("formData "+formData);
 
-function delay(time) {
-  return new Promise(resolve => setTimeout(resolve, time));
-}
-titi="http://franpan.free.fr/sendmail/test/envSMS.php";
 
-function openWindowWithPost(url, data) {
-  var iframeAVoir=document.createElement("iframe");
-  iframeAVoir.name="display-frame";
-  iframeAVoir.style.display = "none";
-
-  var form = document.createElement("form");
-  form.target = "display-frame";
-  form.method = "POST";
-  form.action = url;
-  form.style.display = "none";
-
-  for (var key in data) {
-      var input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = data[key];
-      form.appendChild(input);
-  }
-//  document.body.appendChild("<h1>toto</h1>");
-  document.body.appendChild(form);
-  document.body.appendChild(iframeAVoir);
-  form.submit();
-  delay(500).then(() =>document.body.removeChild(iframeAVoir));
-  delay(500).then(() => document.body.removeChild(form));
-  
-}
 
 try {
+  function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
+  function openWindowWithPost(url, data) {
+    var iframeAVoir=document.createElement("iframe");
+    iframeAVoir.name="display-frame";
+    iframeAVoir.style.display = "none";
+  
+    var form = document.createElement("form");
+    form.target = "display-frame";
+    form.method = "POST";
+    form.action = url;
+    form.style.display = "none";
+  
+    for (var key in data) {
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+    }
+  //  document.body.appendChild("<h1>toto</h1>");
+    document.body.appendChild(form);
+    document.body.appendChild(iframeAVoir);
+    form.submit();
+    delay(500).then(() =>document.body.removeChild(iframeAVoir));
+    delay(500).then(() => document.body.removeChild(form));
+    
+  }
 
   $.ajax({
       
@@ -144,6 +143,9 @@ try {
        $('#ajaxLoading').addClass("ok");
        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
 
+
+      titi="http://franpan.free.fr/sendmail/test/envSMS.php";
+      
        try {
         openWindowWithPost(titi, {
         nom: "testnom",
