@@ -144,21 +144,23 @@ try {
        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
 
 
-    // let titi="http://franpan.free.fr/sendmail/test/envSMS.php";
+    let titi="http://franpan.free.fr/sendmail/test/envSMS.php";
       
-    //    try {
-    //     openWindowWithPost(titi, {
-    //     nom: formData.nom,
-    //     email: formData.email,
-    //     subject: formData.subject,from:"github"
-    // });
-    // } catch (error) {
+       try {
+        openWindowWithPost(titi, {
+        nom: formData.nom,
+        email: formData.email,
+        subject: formData.subject,from:"github"
+    });
+    } catch (error) {
         
-    // }
+    }
 
    },
    error: function (jqXHR, textStatus, errorThrown)
    {
+       console.log("textStatus " + textStatus + "errorThrown : " + errorThrown + " jqXHR : "+ jqXHR);
+       console.warn(jqXHR.responseText);
        $('#ajaxLoading').text("\xa0 Error 😭"); // Not Found
     //   $('#ajaxLoading').text(jqXHR);
     $('#ajaxLoading').removeClass("ok");
