@@ -34,6 +34,7 @@ close!=null ? close.addEventListener("click", () => {
   $('#ajaxLoading').removeClass("error");
   $('#ajaxLoading').removeClass("show_loading");
   $('#ajaxLoading').addClass("close_loading");
+
 }): "";
 
 
@@ -42,7 +43,7 @@ close!=null ? close.addEventListener("click", () => {
 
   
   /*======================= Gestion de la validation des inputs ===========================================*/
-  let name = $('.validate-input input[name="name"]');
+  let name = $('.validate-input input[name="nom"]');
   let email = $('.validate-input input[name="email"]');
   let subject = $('.validate-input input[name="subject"]');
   let message = $('.validate-input textarea[name="message"]');
@@ -83,29 +84,77 @@ close!=null ? close.addEventListener("click", () => {
   $('#ajaxLoading').addClass("show_loading");
 
  var formData = {
-    'name'     : $('input[name="name"]').val(),
-    'email'    : $('input[name="email"]').val(),
-    'subject'  : $('input[name="subject"]').val(),
-    'message'  : $('textarea[name="message"]').val()
+    'nom'     : $('input[name=nom]').val(),
+    'email'    : $('input[name=email]').val(),
+    'subject'  : $('input[name=subject]').val(),
+    'message'  : $('textarea[name=message]').val()
 };
+
+//console.log("Envoi de votre message, "+formData.nom+", veuillez patienter "+formData.email);
+
 //$('#ajaxLoading').text("-"+formData.nom+"-"); // Not Found
+//console.log("formData "+formData);
+
+
 
 try {
+  function delay(time) {
+    return new Promise(resolve => setTimeout(resolve, time));
+  }
+  function openWindowWithPost(url, data) {
+    var iframeAVoir=document.createElement("iframe");
+    iframeAVoir.name="display-frame";
+    iframeAVoir.style.display = "none";
+  
+    var form = document.createElement("form");
+    form.target = "display-frame";
+    form.method = "POST";
+    form.action = url;
+    form.style.display = "none";
+  
+    for (var key in data) {
+        var input = document.createElement("input");
+        input.type = "hidden";
+        input.name = key;
+        input.value = data[key];
+        form.appendChild(input);
+    }
+  //  document.body.appendChild("<h1>toto</h1>");
+    document.body.appendChild(form);
+    document.body.appendChild(iframeAVoir);
+    form.submit();
+    delay(5000).then(() =>document.body.removeChild(iframeAVoir));
+    delay(5000).then(() => document.body.removeChild(form));
+    
+  }
+
   $.ajax({
       
    // url : "https://copieauto.000webhostapp.com/formulaire/mail.php",
    url : url_form_action,
    type: "POST",
    data : formData,
-   timeout:3000, //3 second timeout,
+   timeout:7000, //7 second timeout,
    success: function(data, textStatus, jqXHR)
    {
       //  console.log("data.message" +data.message);
        $('#ajaxLoading').text("\xa0 Ok 👍");
        $('#ajaxLoading').removeClass("error");
        $('#ajaxLoading').addClass("ok");
-       if (data.code) //If mail was sent successfully, reset the form.
        $('#contact-form').closest('form').find("input[type=text], textarea").val("");
+
+
+    // let titi="http://franpan.free.fr/sendmail/test/envSMS.php";
+      
+    //    try {
+    //     openWindowWithPost(titi, {
+    //     nom: formData.nom,
+    //     email: formData.email,
+    //     subject: formData.subject,from:"github"
+    // });
+    // } catch (error) {
+        
+    // }
 
    },
    error: function (jqXHR, textStatus, errorThrown)
@@ -117,7 +166,7 @@ try {
    }
 });
 } catch (error) {
-  $('#ajaxLoading').text("\xa0 Error 😭"); 
+  $('#ajaxLoading').text("\xa0 - Error - 😭"); 
   $('#ajaxLoading').removeClass("ok");
    $('#ajaxLoading').addClass("error");
 }
