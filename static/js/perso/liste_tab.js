@@ -7,26 +7,26 @@ var v1 = new Vue({
         name: "HTML 5",
         icon: "/images/icones/w30/html5_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 2,
-        projetdescriptif_fr: "E-portefolio, Site statique vitrine"
+        dureemin: 3.5,
+        dureemax: 14,
+        projet: 4,
+        projetdescriptif_fr: "E-portefolio, Site statique vitrine, Projet Fil Rouge"
       }, {
         id: 2,
         name: "CSS 3",
         icon: "/images/icones/w30/css3_30.png",
-        quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        quantity: 2,
+        dureemin: 3.5,
+        dureemax: 70,
+        projet: 2,
+        projetdescriptif_fr: "Site statique vitrine, Projet Fil Rouge,et bien plus ;)"
       }, {
         id: 3,
         name: "Javascript / Ajax",
         icon: "/images/icones/w30/js_30.png",
-        quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        quantity: 2,
+        dureemin: 7,
+        dureemax: 105,
         projet: 2,
         projetdescriptif_fr: "Site e-commerce panier, Krusty"
       }, {
@@ -34,8 +34,8 @@ var v1 = new Vue({
         name: "JQuery",
         icon: "/images/icones/w30/jQuery1_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 3.5,
+        dureemax: 35,
         projet: 1,
         projetdescriptif_fr: "Bomberlike"
       }, {
@@ -43,19 +43,19 @@ var v1 = new Vue({
         name: "Bootstrap",
         icon: "/images/icones/w30/bootstrap_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 3.5,
+        dureemax: 21,
+        projet: 1,
+        projetdescriptif_fr: "Àttable"
       }, {
         id: 6,
         name: "Wordpress 4",
         icon: "/images/icones/w30/wordpress4_30.png",
-        quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        quantity: 2,
+        dureemin: 3.5,
+        dureemax: 70,
+        projet: 2,
+        projetdescriptif_fr: "CarAuto, Plugin"
       }, {
         id: 7,
         name: "VueJs 2",
@@ -69,18 +69,18 @@ var v1 = new Vue({
         id: 8,
         name: "PhP 7",
         icon: "/images/icones/w30/php_30.png",
-        quantity: 1,
+        quantity: 4,
         dureemin: 35,
-        dureemax: 105,
-        projet: 2,
-        projetdescriptif_fr: "Attable, Vide Grenier (N-tiers)"
+        dureemax: 140,
+        projet: 3,
+        projetdescriptif_fr: "Attable, Vide Grenier (N-tiers), Site Activite"
       }, {
         id: 81,
         name: "Curl : CLI et avec PhP",
         icon: "/images/icones/w30/curl_h30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 2,
+        dureemax: 4,
         projet: 0,
         projetdescriptif_fr: ""
       }, {
@@ -88,17 +88,17 @@ var v1 = new Vue({
         name: "MySQL",
         icon: "/images/icones/w30/mysql_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 1,
+        dureemin: 3.5,
+        dureemax: 35,
+        projet: 3,
         projetdescriptif_fr: "via API Rest : Vide Grenier (N-tiers), Attable, Site e-commerce "
       }, {
         id: 10,
         name: "Référencement SEO",
         icon: "/images/icones/w30/SEO_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 2,
+        dureemax: 28,
         projet: 0,
         projetdescriptif_fr: ""
       }, {
@@ -107,7 +107,7 @@ var v1 = new Vue({
         icon: "/images/icones/w30/java1_30.png",
         quantity: 1,
         dureemin: 35,
-        dureemax: 70,
+        dureemax: 105,
         projet: 1,
         projetdescriptif_fr: "Vide Grenier (N-tiers)"
       }, {
@@ -115,26 +115,26 @@ var v1 = new Vue({
         name: "Framework JavaFX ",
         icon: "/images/icones/w30/SceneBuilderLogo_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 3.5,
+        dureemax: 70,
+        projet: 1,
+        projetdescriptif_fr: "Vide Grenier (N-tiers)"
       }, {
         id: 13,
         name: "JEE 8",
         icon: "/images/icones/w30/jee_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 14,
+        dureemax: 105,
+        projet: 1,
+        projetdescriptif_fr: "Site "
       }, {
         id: 131,
         name: "Hibernate",
         icon: "/images/icones/w30/hibernate_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 7,
+        dureemax: 14,
         projet: 0,
         projetdescriptif_fr: ""
       }, {
@@ -142,8 +142,8 @@ var v1 = new Vue({
         name: "Android 7",
         icon: "/images/icones/w30/android_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 7,
+        dureemax: 35,
         projet: 1,
         projetdescriptif_fr: "Vide Grenier (N-tiers)"
       }, {
@@ -151,26 +151,26 @@ var v1 = new Vue({
         name: "Git / Github",
         icon: "/images/icones/w30/git_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 7,
+        dureemax: 14,
+        projet: 1,
+        projetdescriptif_fr: "Projet Collaboratif"
       }, {
         id: 16,
         name: "Maquetage & Wireframe d'Applications Web / Desktop / Mobile",
         icon: "/images/icones/w30/balsamiq_30.png",
-        quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        quantity: 2,
+        dureemin: 3.5,
+        dureemax: 35,
+        projet: 3,
+        projetdescriptif_fr: "PPI"
       }, {
         id: 17,
         name: "Algorithmie",
         icon: "/images/icones/w30/algo_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 7,
+        dureemax: 35,
         projet: 0,
         projetdescriptif_fr: ""
       }, {
@@ -178,8 +178,8 @@ var v1 = new Vue({
         name: "UML2",
         icon: "/images/icones/w30/uml2_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 7,
+        dureemax: 35,
         projet: 1,
         projetdescriptif_fr: "FortBoyaux"
       }, {
@@ -187,17 +187,17 @@ var v1 = new Vue({
         name: "Merise",
         icon: "/images/icones/w30/merise_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 7,
+        dureemax: 35,
+        projet: 1,
+        projetdescriptif_fr: "PPI"
       }, {
         id: 19,
         name: "XML/XPath/XSLT",
         icon: "/images/icones/w30/xml_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 3.5,
+        dureemax: 14,
         projet: 1,
         projetdescriptif_fr: "Gestion inventaire avec Php "
       }, {
@@ -206,25 +206,25 @@ var v1 = new Vue({
         icon: "/images/icones/w30/json_30.png",
         quantity: 1,
         dureemin: 1,
-        dureemax: 1,
+        dureemax: 3.5,
         projet: 0,
         projetdescriptif_fr: ""
       }, {
         id: 20,
         name: "Python",
         icon: "/images/icones/w30/python_30.png",
-        quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        quantity: 2,
+        dureemin: 7,
+        dureemax: 70,
+        projet: 1,
+        projetdescriptif_fr: "Scrap&Scripting"
       }, {
         id: 21,
         name: "Gestion de projet Agile : Scrum",
         icon: "/images/icones/w30/scrum_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
+        dureemin: 3.5,
+        dureemax: 70,
         projet: 1,
         projetdescriptif_fr: "Tous les projets peuvent être réalisés via Scrum"
       }, {
@@ -232,9 +232,9 @@ var v1 = new Vue({
         name: "Divers ateliers Agiles / Coaching",
         icon: "/images/icones/w30/diversagile_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 1,
+        dureemin: 3.5,
+        dureemax: 7,
+        projet: 3,
         projetdescriptif_fr: "Carpaccio, Cubes, Marshmallow Challenge"
       }, {
         id: 23,
@@ -250,46 +250,46 @@ var v1 = new Vue({
         name: " -en prod- Node JS",
         icon: "/images/icones/w30/nodejs_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 7,
+        dureemax: 70,
+        projet: 1,
+        projetdescriptif_fr: "GestDevis"
       }, {
         id: 50,
         name: " -en prod- Java Server Faces",
         icon: "/images/icones/w30/jee3_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 7,
+        dureemax: 14,
+        projet: 1,
+        projetdescriptif_fr: "GestFilmotheque"
       }, {
         id: 25,
         name: " -en prod- TypeScript",
         icon: "/images/icones/w30/typescript_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 3.5,
+        dureemax: 14,
+        projet: 1,
+        projetdescriptif_fr: "PPI"
       }, {
         id: 26,
         name: " -en prod- Mongo DB",
         icon: "/images/icones/w30/mongodb_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 7,
+        dureemax: 14,
+        projet: 1,
+        projetdescriptif_fr: "GestDevis"
       }, {
         id: 27,
         name: " -a venir- Doctrine",
         icon: "/images/icones/w30/doctrine_30.png",
         quantity: 1,
-        dureemin: 1,
-        dureemax: 1,
-        projet: 0,
-        projetdescriptif_fr: ""
+        dureemin: 3,
+        dureemax: 7,
+        projet: 1,
+        projetdescriptif_fr: "Passage Mysql Doctrine"
       }, {
         id: 28,
         name: " -a venir- Symfony",
@@ -332,7 +332,7 @@ var v1 = new Vue({
 
   methods: {
     imgPreUrl(toto) {
-      console.log(toto);
+     // console.log(toto);
       return "/files/";
     },
     addItem() {
@@ -392,7 +392,7 @@ var vanim = new Vue({
     for (let index = 0; index < 3; index++) {
      do { 
         rand = Math.floor(Math.random() * (v1.items.length-1)) ;
-        console.log(rand)
+       // console.log(rand)
      }while ( listforma.indexOf(rand)!=-1)
      listforma.push(rand);
      this.items.splice(1, 0, {

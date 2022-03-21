@@ -82,7 +82,10 @@ a[href="https://www.linkedin.com/in/francispanzani/"]::after {
 }
 
 /* Rajout css Form pour centrer element et avoir fond grisé */
-
+footer{
+  /* afin que le formulaire soit devant*/
+  z-index: 1!important;
+}
 .popup-wrapper {
   position: fixed;
   top: 0;
@@ -525,13 +528,17 @@ div[class="wrap-input1 loading_ajax show_loading error"]::before {
 
 .close_loading {
   display: none;
+  cursor: pointer; 
   }
 
 .show_loading {
 display: block;
+cursor: pointer; 
 }
 
-
+#onlyOnMessage{
+  cursor: pointer; 
+}
 div[class="wrap-input1 loading_ajax show_loading ok"]::before {
   content: "\f058";
   font-family: FontAwesome;
