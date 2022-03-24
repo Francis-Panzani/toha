@@ -21,6 +21,12 @@
       <div class="card-body">
         <p class="card-text">{{ .summary | markdownify }}</p>
       </div>
+      
+      {{ if .url }}
+      <div class="card-footer text-info text-center">
+        <button class="btn btn-info btn-outline-white " onclick="location.href='{{.url}}'"> {{ i18n "card_footer"}} </button>
+      </div>
+      {{ end }}
     </div>
   </a>
 </div>

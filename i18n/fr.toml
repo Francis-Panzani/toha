@@ -154,3 +154,6 @@ other = "Envoyer un Email"
 
 [loading_ajax]
 other = "Envoi..."
+
+[card_footer]
+other = "En voir plus"

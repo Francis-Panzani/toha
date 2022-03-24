@@ -1,3 +1,12 @@
+:root {
+    --primary-blue: #0074be;
+    --secondary-blue: #0089ca;
+    --gray: #f7f7f7;
+    --font-titre: 'Source Code Pro';
+    --font-commun: 'Roboto';
+    --font-litteraire: 'Quintessential';
+}
+
 /* This is empty CSS file intended to be overwritten by user's custom CSS file */
 
 /* ============= Device specific fixes ======= */
@@ -43,4 +52,17 @@
 
 /* iPhone 5 or before */
 @media only screen and (max-width: 320px) {
+}
+
+.card-footer {
+    /* background-color: var(--secondary-blue)!important;*/
+    font-size: 120%;
+    font-family: var(--font-commun), Arial, Helvetica, sans-serif!important;
+    color: white!important;
+    padding:0;
+}
+.card-footer button  {
+   width:100%;
+   border-radius: 0!important;
+   display: inline;
 }
