@@ -21,7 +21,7 @@ var v1 = new Vue({
         projet: 2,
         projetdescriptif_fr: "Site statique vitrine, Projet Fil Rouge,et bien plus ;)"
       }, {
-        id: 3,
+        id: 0,
         name: "Javascript / Ajax",
         icon: "/images/icones/w30/js_30.png",
         quantity: 2,
@@ -49,7 +49,7 @@ var v1 = new Vue({
         projetdescriptif_fr: "Àttable"
       }, {
         id: 6,
-        name: "Wordpress 4",
+        name: "Wordpress",
         icon: "/images/icones/w30/wordpress4_30.png",
         quantity: 2,
         dureemin: 3.5,
@@ -332,7 +332,7 @@ var v1 = new Vue({
 
   methods: {
     imgPreUrl(toto) {
-     // console.log(toto);
+      // console.log(toto);
       return "/files/";
     },
     addItem() {
@@ -352,116 +352,150 @@ var v1 = new Vue({
     }
   }
 })
+
 var vanim = new Vue({
   el: "#appdemo",
-
+  /* 
+ 0 Javascript / Ajax
+ 5 Bootstrap
+ 6 Wordpress
+ 7 VueJs2
+ 8 Php7
+ 9 MySQL
+ 16 Maquetage & Wireframe d'Applications Web / Desktop / Mobile
+ 20 Python
+ 21 Gestion de projet Agile : Scrum
+ 22 Divers ateliers Agiles / Coaching
+ 24 Node Js
+ 25 Typescript
+ 26 MongoDb 
+ 28 Symfony	
+     */
   data() {
 
     return {
       etatanim: 3,
-      items: [{}]
+      items: [{}],
+      listeitemsavoir: [{}],
+      listforma: [0,5, 6, 8, 9, 16, 20, 21, 25, 28]
     }
   },
 
   computed: {
     totalDureemin() {
-      return this.items.reduce((total, item) => {
+      return this.listeitemsavoir.reduce((total, item) => {
         return total + item.dureemin
       }, 0)
     },
     totalQuantity() {
-      return this.items.reduce((total, item) => {
+      return this.listeitemsavoir.reduce((total, item) => {
         return total + item.quantity
       }, 0)
     },
     totalDureemax() {
-      return this.items.reduce((total, item) => {
+      return this.listeitemsavoir.reduce((total, item) => {
         return total + item.dureemax
       }, 0)
     },
     totalProjets() {
-      return this.items.reduce((total, item) => {
+      return this.listeitemsavoir.reduce((total, item) => {
         return total + item.projet
       }, 0)
     },
   },
 
   mounted() {
-    rand=0;//monte l'animation avec des éléments au hazard en en évitant certains
-    listforma=[6,7,8,22,23,24];
-    for (let index = 0; index < 3; index++) {
-     do { 
-        rand = Math.floor(Math.random() * (v1.items.length-1)) ;
-       // console.log(rand)
-     }while ( listforma.indexOf(rand)!=-1)
-     listforma.push(rand);
-     this.items.splice(1, 0, {
-        id: v1.items[rand].id,
-        name: v1.items[rand].name,
-        icon: v1.items[rand].icon,
-        quantity: v1.items[rand].quantity,
-        dureemin: v1.items[rand].dureemin,
-        dureemax: v1.items[rand].dureemax,
-        projet: v1.items[rand].projet,
-        projetdescriptif_fr: v1.items[rand].projetdescriptif_fr
-      });
+    rand = 0;//monte l'animation avec des éléments au hazard en en évitant certains
+
+    let listformaafficher = [];
+
+    //affiche la liste des formations a mettre en avant
+    // console.log(this.listforma);
+
+    //met dans un tableau 3 indices différents a afficher au hasard
+    for (let indexfor = 0; indexfor < 3; indexfor++) {
+      do {
+        rand = Math.floor(Math.random() * (this.listforma.length - 1));
+       // console.log("rand : " + rand)
+      } while (listformaafficher.indexOf(this.listforma[rand]) != -1)
+    //met l élément nouveau dans le tableau
+      listformaafficher.push(this.listforma[rand]);
+      //on cherche dans la liste de V1 l'élément qui a l'id correspondant et on retourne l'objet
+      objapush= v1.items.find(element => listformaafficher[indexfor] == element.id);
+      this.listeitemsavoir.push(objapush);
     }
-    
+    console.log("items a voir : " + listformaafficher);
   
+
   },
   methods: {
+    retourneIddansListIemDeLID(idachercher) {
+
+      v1.items.forEach(function (element, index) {
+        if (idachercher == element.id) {
+
+          console.log("index : " + index);
+
+        }
+
+      });
+
+    },
     donne_etatanim() {
-      return this.items.length;
+      return this.listeitemsavoir.length;
     },
     addItem() {
-    if (vanim.donne_etatanim()<4){//pour eviter qu'on en lance trop en //
-      if (flaganim == 7) {//change avec le precedent si jamais on a été arreté en cours
-        this.items.splice(3, 0, {
-          id: 11,
-          name: "Java SE 8",
-          icon: "/images/icones/w30/java1_30.png",
-          quantity: 1,
-          dureemin: 35,
-          dureemax: 70,
-          projet: 2,
-          projetdescriptif_fr: "Vide Grenier (N-tiers), Cœur des hommes"
-        });
-        flaganim = 8;
-      } else if (flaganim == 0 || flaganim == 8) {
-        this.items.splice(3, 0, {
-          id: 7,
-          name: "VueJs 2",
-          icon: "/images/icones/w30/vuejs2_30.png",
-          quantity: 1,
-          dureemin: 21,
-          dureemax: 49,
-          projet: 1,
-          projetdescriptif_fr: "Composant localisation"
-        });
-        flaganim = 7;
+      if (vanim.donne_etatanim() < 4) {//pour eviter qu'on en lance trop en //
+        if (flaganim == 7) {//change avec le precedent si jamais on a été arreté en cours
+
+          vanim.listeitemsavoir.splice(3, 0, {
+            id: 24,
+            name: " -en prod- Node JS",
+            icon: "/images/icones/w30/nodejs_30.png",
+            quantity: 1,
+            dureemin: 7,
+            dureemax: 70,
+            projet: 1,
+            projetdescriptif_fr: "GestDevis"
+          }
+          
+          );
+          flaganim = 8;
+        } else if (flaganim == 0 || flaganim == 8) {
+          this.listeitemsavoir.splice(3, 0, {
+            id: 7,
+            name: "VueJs 2",
+            icon: "/images/icones/w30/vuejs2_30.png",
+            quantity: 1,
+            dureemin: 21,
+            dureemax: 49,
+            projet: 1,
+            projetdescriptif_fr: "Composant localisation"
+          });
+          flaganim = 7;
+        }
       }
-    }
 
       if (visible) {
-      //  console.log("addItem visible")
+        //  console.log("addItem visible")
         setTimeout(() => {
           this.moveItems()
         }, 2000)
       }
     },
     moveItems() {
-      this.items = this.items.reverse()
+      this.listeitemsavoir = this.listeitemsavoir.reverse()
       if (visible) {
-    //    console.log("moveItems visible")
+        //    console.log("moveItems visible")
         setTimeout(() => {
           this.removeItem()
         }, 3000)
       }
     },
     removeItem() {
-      this.items.splice(0, 1);
+      this.listeitemsavoir.splice(0, 1);
       if (window.visible) {
-     //   console.log("removeItem visible")
+        //   console.log("removeItem visible")
         setTimeout(() => { //si element visible on continue l'animation
           this.addItem()
         }, 3000)
@@ -474,6 +508,7 @@ var vanim = new Vue({
 var visible = false; // condition pour ne pas déclencher des millions de fonctions
 var flaganim = 0;
 
+// Arrêt de l'animation si l'élément n'est plus visible
 function isElementVisible(elementToBeChecked) {
   var TopView = $(window).scrollTop();
   var BotView = TopView + $(window).height();
