@@ -24,7 +24,7 @@
       
       {{ if .url }}
       <div class="card-footer text-info text-center">
-        <button class="btn btn-info btn-outline-white " onclick="location.href='{{.url}}'"> {{ i18n "card_footer"}} </button>
+        <button class="btn btn-info btn-outline-white " onclick="window.open({{.url}})"> {{ i18n "card_footer"}} </button>
       </div>
       {{ end }}
     </div>
